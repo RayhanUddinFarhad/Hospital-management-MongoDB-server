@@ -1,0 +1,44 @@
+[
+    {
+      "name": "Dr. John Smith",
+      "specialist": "Cardiologist",
+      "rating": 4.9,
+      "image": "https://img.freepik.com/free-photo/attractive-young-male-nutriologist-lab-coat-smiling-against-white-background_662251-2960.jpg",
+      "visiting-price": 10
+    },
+    {
+      "name": "Dr. Jane Doe",
+      "specialist": "Oncologist",
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "visiting-price": 8
+    },
+    {
+      "name": "Dr. Michael Lee",
+      "specialist": "Neurologist",
+      "rating": 4.7,
+      "image": "https://images.unsplash.com/photo-1622253694242-abeb37a33e97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
+      "visiting-price": 5
+    },
+    {
+      "name": "Dr. Sarah Johnson",
+      "specialist": "Pediatrician",
+      "rating": 4.6,
+      "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "visiting-price": 10
+    },
+    {
+      "name": "Dr. William Chen",
+      "specialist": "Dermatologist",
+      "rating": 4.5,
+      "image": "https://plus.unsplash.com/premium_photo-1661764878654-3d0fc2eefcca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "visiting-price": 5
+    },
+    {
+      "name": "Dr. Emily Liu",
+      "specialist": "Gynecologist",
+      "rating": 4.4,
+      "image": "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip",
+      "visiting-price": 8
+    }
+  ]
