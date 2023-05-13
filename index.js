@@ -110,6 +110,59 @@ async function run() {
        query = { email: req.query.email}
       }
 
+      app.get ('/appointments/:id', async (req, res) => { 
+
+
+        const id = req.params.id;
+  
+  
+        const query = { _id : new ObjectId(id) };
+  
+  
+        const result = await appointment.findOne(query);
+  
+        res.send (result)
+  
+  
+       })
+
+
+       app.put ('/appointments/:id', async(req, res) => { 
+
+        const body = req.body;
+        const id = req.params.id;
+        const filter = {_id : new ObjectId  (id)};
+        const options = { upsert: true };
+
+        const updateDoc = {
+
+
+        $set : {
+
+          name : body.name,
+          email : body.email,
+          phone : body.phone,
+          date : body.date
+
+
+
+        },
+        }
+
+        const result = await appointment.updateOne(filter, updateDoc, options);
+
+
+        res.send (result)
+
+
+
+
+
+
+
+       })
+  
+
 
 
 
@@ -124,6 +177,18 @@ async function run() {
        const result = await cursor.toArray()
 
        res.send (result)
+     })
+
+     app.delete ('/appointments/:id', async(req, res) => { 
+
+
+      const id = req.params.id;
+      const query = {_id :  new ObjectId (id)};
+
+      const result = await appointment.deleteOne(query);
+
+
+
      })
 
 
