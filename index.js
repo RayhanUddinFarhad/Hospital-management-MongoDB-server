@@ -4,7 +4,9 @@ require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 4000
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+
+
 
 
 app.use (express.json())
@@ -36,6 +38,7 @@ async function run() {
 
 
 
+
     app.get ('/doctors', async (req, res) => {
 
         const cursor = doctors.find();
@@ -50,6 +53,85 @@ async function run() {
 
         
      })
+
+     app.get ('/doctors/:id', async (req, res) => { 
+
+
+      const id = req.params?.id;
+
+
+      const query = { _id : new ObjectId(id) };
+
+
+      const result = await doctors.findOne(query);
+
+      res.send (result)
+
+
+     })
+
+
+
+    
+
+
+     const appointment = client.db('HealingHandsManage').collection('appointment');
+
+
+     app.post ('/appointments', async (req, res) => {
+
+      const details = req.body;
+
+      const result = await appointment.insertOne(details);
+
+
+      res.send (result)
+
+
+
+
+
+
+
+
+     })
+
+     app.get ('/appointments', async (req, res) => { 
+
+
+
+      let  query = {}
+
+
+      if (req.query?.email) {
+
+
+
+       query = { email: req.query.email}
+      }
+
+
+
+
+
+
+
+
+
+
+       const cursor = appointment.find(query);
+
+       const result = await cursor.toArray()
+
+       res.send (result)
+     })
+
+
+
+
+
+
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
